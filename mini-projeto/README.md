@@ -1,9 +1,9 @@
 # 📊 Mini-Projeto Avaliativo — Análise de Dados com Python
 
-**Turma:** `Analise_de_Dados_T1`
-**Módulo:** 1 — Análise de Dados com Python
-**Projeto:** Análise Exploratória de Dados de Varejo
-**Status:** 🚧 Em desenvolvimento
+**Turma:** `Analise_de_Dados_T1`  
+**Módulo:** 1 — Análise de Dados com Python  
+**Projeto:** Análise Exploratória de Dados de Varejo  
+**Status:** 🚧 Em desenvolvimento  
 
 ---
 
@@ -21,18 +21,18 @@ O projeto busca transformar dados inicialmente brutos em uma estrutura mais orga
 
 O projeto tem como principais objetivos:
 
-* Importar e inspecionar uma base de dados de varejo;
-* Identificar problemas de qualidade nos dados;
-* Trabalhar com diferentes tipos de dados;
-* Realizar transformações e padronizações;
-* Identificar e tratar valores ausentes;
-* Identificar e remover registros duplicados;
-* Converter datas para o tipo adequado;
-* Realizar estatística descritiva;
-* Criar agrupamentos para análise exploratória;
-* Extrair informações relevantes da base;
-* Documentar as decisões tomadas durante o processo;
-* Preparar uma base limpa para análises futuras.
+- Importar e inspecionar uma base de dados de varejo;
+- Identificar problemas de qualidade nos dados;
+- Trabalhar com diferentes tipos de dados;
+- Realizar transformações e padronizações;
+- Identificar e tratar valores ausentes;
+- Identificar e remover registros duplicados;
+- Converter datas para o tipo adequado;
+- Realizar estatística descritiva;
+- Criar agrupamentos para análise exploratória;
+- Extrair informações relevantes da base;
+- Documentar as decisões tomadas durante o processo;
+- Preparar uma base limpa para análises futuras.
 
 ---
 
@@ -50,18 +50,18 @@ Durante a inspeção, foram identificadas **4 colunas completamente vazias**, de
 
 Após essa etapa, foram consideradas as seguintes colunas:
 
-| Coluna      | Descrição                                         |
-| ----------- | ------------------------------------------------- |
-| `DATA`      | Data da compra                                    |
-| `CO_ID`     | Identificador da compra                           |
-| `CL_ID`     | Identificador do cliente                          |
-| `CL_GENERO` | Gênero do cliente                                 |
-| `CL_EC`     | Campo cadastral do cliente                        |
-| `CL_FHL`    | Número de filhos utilizado na análise estatística |
-| `CL_SEG`    | Segmento do cliente                               |
-| `PR_ID`     | Identificador do produto                          |
-| `PR_CAT`    | Categoria do produto                              |
-| `PR_NOME`   | Nome do produto                                   |
+| Coluna | Descrição |
+| :--- | :--- |
+| `DATA` | Data da compra |
+| `CO_ID` | Identificador da compra |
+| `CL_ID` | Identificador do cliente |
+| `CL_GENERO` | Gênero do cliente |
+| `CL_EC` | Campo cadastral do cliente |
+| `CL_FHL` | Número de filhos utilizado na análise estatística |
+| `CL_SEG` | Segmento do cliente |
+| `PR_ID` | Identificador do produto |
+| `PR_CAT` | Categoria do produto |
+| `PR_NOME` | Nome do produto |
 
 > **Observação:** o material fornecido não apresenta uma definição textual para todos os códigos das colunas. Por isso, o projeto evita atribuir significados que não estejam documentados na base ou no material da atividade.
 
@@ -69,13 +69,13 @@ Após essa etapa, foram consideradas as seguintes colunas:
 
 ## 🛠️ Tecnologias utilizadas
 
-* 🐍 Python
-* 🐼 Pandas
-* 📊 Matplotlib
-* 📄 CSV
-* 🔎 `csv.DictReader`
-* 📓 Google Colab / VS Code
-* 🌱 Git e GitHub
+- 🐍 Python
+- 🐼 Pandas
+- 📊 Matplotlib
+- 📄 CSV
+- 🔎 `csv.DictReader`
+- 📓 Google Colab / VS Code
+- 🌱 Git e GitHub
 
 ---
 
@@ -93,11 +93,11 @@ Foi utilizado o `csv.DictReader` para realizar a extração estruturada dos regi
 
 ### Principais verificações
 
-* Quantidade de registros;
-* Quantidade de colunas;
-* Nomes das colunas;
-* Tipos de dados;
-* Identificação de colunas completamente vazias.
+- Quantidade de registros;
+- Quantidade de colunas;
+- Nomes das colunas;
+- Tipos de dados;
+- Identificação de colunas completamente vazias.
 
 ### Resultado inicial
 
@@ -111,7 +111,7 @@ As quatro colunas completamente vazias foram removidas por não apresentarem inf
 
 ---
 
-# 🧹 Sprint 2 — Transformação e padronização
+## 🧹 Sprint 2 — Transformação e padronização
 
 Nesta etapa foram realizadas transformações necessárias para melhorar a consistência dos dados.
 
@@ -144,188 +144,199 @@ Após a conversão, não foram identificadas datas inválidas.
 
 ### 📆 Período encontrado
 
-A base apresenta registros entre:
-
-```text
-04/01/2019
-        ↓
-08/12/2022
-```
-
-Foram identificadas **333 datas distintas**.
+A base apresenta registros entre **04/01/2019** e **08/12/2022**. Foram identificadas **333 datas distintas**.
 
 ---
 
-# 🧹 Sprint 3 — Nulos e duplicatas
+## 🧹 Sprint 3 — Nulos e duplicatas
 
 A análise de qualidade identificou dois pontos importantes:
+- registros duplicados;
+- categorias de produto sem classificação.
 
-* registros duplicados;
-* categorias de produto sem classificação.
+### 🔁 Registros duplicados
 
-## 🔁 Registros duplicados
-
-Na base original foram identificados:
-
-```text
-96.553 registros duplicados
-```
-
-Isso representa aproximadamente:
+Na base original foram identificados **96.553 registros duplicados**, o que representa aproximadamente **11,63% da base original**. Os registros duplicados foram removidos para evitar distorções nas análises.
 
 ```text
-11,63% da base original
-```
-
-Os registros duplicados foram removidos para evitar que a mesma observação fosse considerada mais de uma vez nas análises.
-
-### Resultado após a remoção
-
-```text
-830.000 registros
-        ↓
-remoção de duplicatas
-        ↓
-733.447 registros
+830.000 registros  ➔  [ Remoção de duplicatas ]  ➔  733.447 registros
 ```
 
 ---
 
-## 🏷️ Categorias sem classificação
+### 🏷️ Categorias sem classificação
 
-Na coluna `PR_CAT`, foram encontrados registros com o marcador:
+Na coluna `PR_CAT`, foram encontrados registros com o marcador `#N/D`, que foram tratados como `Sem Categoria`. 
 
-```text
-#N/D
-```
-
-Esses valores foram tratados como:
-
-```text
-Sem Categoria
-```
-
-Essa decisão mantém os registros na base sem atribuir uma categoria que não está presente na fonte original.
-
-Após a remoção das duplicatas, permaneceram:
-
-```text
-3.228 registros — Sem Categoria
-```
-
-Isso representa aproximadamente:
-
-```text
-0,44% da base limpa
-```
+Após a remoção das duplicatas, permaneceram **3.228 registros** nessa condição, representando cerca de **0,44% da base limpa**.
 
 ---
 
-## 🧪 Resultado da limpeza
+### 🧪 Resultado da limpeza
 
-| Indicador                 | Resultado |
-| ------------------------- | --------: |
-| Registros originais       |   830.000 |
-| Duplicatas identificadas  |    96.553 |
-| Registros após remoção    |   733.447 |
-| Registros `Sem Categoria` |     3.228 |
-| Datas inválidas           |         0 |
+| Indicador | Resultado |
+| :--- | ---: |
+| Registros originais | 830.000 |
+| Duplicatas identificadas | 96.553 |
+| Registros após remoção | 733.447 |
+| Registros `Sem Categoria` | 3.228 |
+| Datas inválidas | 0 |
 
 ---
 
-# 📊 Sprint 4 — Estatística descritiva
+## 📊 Sprint 4 — Estatística descritiva
 
 A estatística descritiva foi realizada sobre a coluna `CL_FHL`, utilizada no projeto para representar o **número de filhos**.
 
-Foram calculadas as principais medidas solicitadas:
-
-| Estatística     | Resultado |
-| --------------- | --------: |
-| Contagem        |   733.447 |
-| Média           |    1,1460 |
-| Mediana         |         0 |
-| Desvio padrão   |    1,4169 |
-| Moda            |         0 |
-| Mínimo          |         0 |
-| 1º quartil (Q1) |         0 |
-| 2º quartil (Q2) |         0 |
-| 3º quartil (Q3) |         2 |
-| Máximo          |         4 |
+| Estatística | Resultado |
+| :--- | ---: |
+| Contagem | 733.447 |
+| Média | 1,1460 |
+| Mediana | 0,0000 |
+| Desvio padrão | 1,4169 |
+| Moda | 0,0000 |
+| Mínimo | 0,0000 |
+| 1º quartil (Q1) | 0,0000 |
+| 2º quartil (Q2) | 0,0000 |
+| 3º quartil (Q3) | 2,0000 |
+| Máximo | 4,0000 |
 
 ### 📌 Interpretação
 
-A média indica aproximadamente **1,15 filho por registro**.
-
-Entretanto, a mediana e a moda são iguais a **0**, indicando que o valor mais frequente e o valor central da distribuição estão concentrados em clientes sem filhos registrados.
-
-O terceiro quartil é igual a **2**, enquanto o valor máximo encontrado é **4**.
+A média indica aproximadamente **1,15 filho por registro**. Entretanto, a mediana e a moda são iguais a **0**, indicando que o valor mais frequente e o valor central da distribuição estão concentrados em clientes sem filhos registrados. O terceiro quartil é igual a **2**, enquanto o valor máximo encontrado é **4**.
 
 ---
 
-# 📈 Sprint 5 — Agrupamentos e análise exploratória
+## 📈 Sprint 5 — Agrupamentos e análise exploratória
 
-Para explorar a estrutura da base, foram realizados agrupamentos utilizando `groupby()`.
+Para explorar a estrutura da base e identificar padrões de consumo e perfil do cliente, foram realizados agrupamentos utilizando a função `groupby()`.
 
----
+### 👥 Distribuição por Gênero (`CL_GENERO`)
 
-## 👥 Distribuição por gênero
+| Gênero | Registros | Participação (%) |
+| :---: | ---: | ---: |
+| **F** | 382.427 | 52,14% |
+| **M** | 351.020 | 47,86% |
+| **Total** | **733.447** | **100,00%** |
 
-| Gênero    |   Registros | Participação |
-| --------- | ----------: | -----------: |
-| F         |     382.427 |       52,14% |
-| M         |     351.020 |       47,86% |
-| **Total** | **733.447** |     **100%** |
+### 🛒 Distribuição por Categoria de Produto (`PR_CAT`)
 
-### Insight
+| Categoria | Registros | Participação (%) |
+| :--- | ---: | ---: |
+| **ALIMENTOS** | 384.197 | 52,38% |
+| **HIGIENE** | 137.702 | 18,77% |
+| **LIMPEZA** | 128.632 | 17,54% |
+| **BEBIDAS** | 38.264 | 5,22% |
+| **PET** | 28.553 | 3,89% |
+| **ACESSORIOS** | 12.871 | 1,75% |
+| **Sem Categoria** | 3.228 | 0,44% |
+| **Total** | **733.447** | **100,00%** |
 
-A distribuição apresenta uma participação ligeiramente maior do grupo identificado como `F`, correspondente a aproximadamente **52,14%** dos registros.
+### 🏷️ Distribuição por Segmento (`CL_SEG`)
 
----
-
-## 🛒 Distribuição por categoria de produto
-
-| Categoria     |   Registros | Participação |
-| ------------- | ----------: | -----------: |
-| ALIMENTOS     |     384.197 |       52,38% |
-| HIGIENE       |     137.702 |       18,77% |
-| LIMPEZA       |     128.632 |       17,54% |
-| BEBIDAS       |      38.264 |        5,22% |
-| PET           |      28.553 |        3,89% |
-| ACESSORIOS    |      12.871 |        1,75% |
-| Sem Categoria |       3.228 |        0,44% |
-| **Total**     | **733.447** |     **100%** |
-
-### Insight
-
-A categoria **ALIMENTOS** concentra mais da metade dos registros da base, representando aproximadamente **52,38%** das observações após a limpeza.
+| Segmento | Registros | Participação (%) |
+| :---: | ---: | ---: |
+| **B** | 468.505 | 63,88% |
+| **C** | 205.265 | 27,99% |
+| **A** | 59.677 | 8,14% |
+| **Total** | **733.447** | **100,00%** |
 
 ---
 
-## 🏷️ Distribuição por segmento
+# 📋 Relatório Final da Análise (Console Output)
 
-| Segmento  |   Registros | Participação |
-| --------- | ----------: | -----------: |
-| B         |     468.505 |       63,88% |
-| C         |     205.265 |       27,99% |
-| A         |      59.677 |        8,14% |
-| **Total** | **733.447** |     **100%** |
+Abaixo está o relatório consolidado gerado automaticamente pela execução do pipeline de dados:
 
-### Insight
+### 1. Volume de Dados
+- **Registros originais:** 830.000
+- **Registros após limpeza:** 733.447
+- **Registros removidos como duplicados:** 96.553
 
-O segmento **B** apresenta forte predominância na base, representando aproximadamente **63,88%** dos registros analisados.
+---
+
+### 2. Qualidade das Categorias
+- **Registros sem categoria:** 3.228
+- **Participação:** 0,44%
+
+---
+
+### 3. Estatísticas — Número de Filhos (`CL_FHL`)
+| Métrica | Valor |
+| :--- | :--- |
+| **Contagem** | 733.447 |
+| **Média** | 1,15 |
+| **Mediana** | 0,00 |
+| **Desvio padrão** | 1,4169 |
+| **Mínimo** | 0 |
+| **Q1 (25%)** | 0,00 |
+| **Q2 (50%)** | 0,00 |
+| **Q3 (75%)** | 2,00 |
+| **Máximo** | 4 |
+| **Moda** | 0 |
+
+---
+
+### 4. Principais Agrupamentos
+
+#### 👥 Distribuição por Gênero (`CL_GENERO`)
+| Gênero | Registros | Participação (%) |
+| :---: | ---: | ---: |
+| **F** | 382.427 | 52,14% |
+| **M** | 351.020 | 47,86% |
+
+#### 🛒 Distribuição por Categoria (`PR_CAT`)
+| Categoria | Registros | Participação (%) |
+| :--- | ---: | ---: |
+| **ALIMENTOS** | 384.197 | 52,38% |
+| **HIGIENE** | 137.702 | 18,77% |
+| **LIMPEZA** | 128.632 | 17,54% |
+| **BEBIDAS** | 38.264 | 5,22% |
+| **PET** | 28.553 | 3,89% |
+| **ACESSORIOS** | 12.871 | 1,75% |
+| **Sem Categoria** | 3.228 | 0,44% |
+
+#### 🏷️ Distribuição por Segmento (`CL_SEG`)
+| Segmento | Registros | Participação (%) |
+| :---: | ---: | ---: |
+| **B** | 468.505 | 63,88% |
+| **C** | 205.265 | 27,99% |
+| **A** | 59.677 | 8,14% |
+
+---
+
+### 5. Período dos Dados
+- **Datas válidas:** 733.447
+- **Data inicial:** 04/01/2019 `00:00:00`
+- **Data final:** 08/12/2022 `00:00:00`
+- **Datas distintas:** 333
+- **Datas ausentes ou inválidas:** 0
 
 ---
 
 # 🔎 Principais insights
 
-A análise exploratória permitiu identificar os seguintes pontos:
+A Análise Exploratória de Dados (AED) realizada sobre a base higienizada permitiu extrair as seguintes observações estratégicas:
 
-* 🔁 **11,63% dos registros originais eram duplicados**, totalizando 96.553 ocorrências removidas durante a limpeza.
-* 🛒 A categoria **ALIMENTOS representa 52,38%** da base após o tratamento dos dados.
-* 🏷️ O **segmento B concentra 63,88%** dos registros analisados.
-* 👥 O grupo identificado como **F representa 52,14%** dos registros, enquanto o grupo M representa 47,86%.
-* 👶 A variável utilizada para representar o número de filhos apresenta **média de 1,15**, mas mediana e moda iguais a 0.
-* ❓ Os registros classificados como **Sem Categoria representam apenas 0,44%** da base limpa.
+1. **Volume Significativo de Duplicidades:**
+   - A limpeza identificou **96.553 registros duplicados**, o que representava cerca de **11,63% da base original**. A remoção dessas ocorrências foi crucial para evitar distorções nas métricas do negócio.
+
+2. **Dominância da Categoria de Alimentos:**
+   - A categoria **ALIMENTOS** lidera isoladamente com **52,38% do volume de compras** (384.197 registros). As categorias de **HIGIENE** (18,77%) e **LIMPEZA** (17,54%) ocupam o segundo e terceiro lugar, indicando que a base de clientes utiliza o estabelecimento majoritariamente para compras essenciais de abastecimento doméstico.
+
+3. **Predominância do Segmento B:**
+   - O **Segmento B representa 63,88% dos registros** (468.505 compras), seguido pelo Segmento C (27,99%) e Segmento A (8,14%). Isso sugere uma forte concentração no perfil intermediário de clientes, sendo o principal alvo para campanhas de fidelização.
+
+4. **Equilíbrio na Distribuição de Gênero:**
+   - O perfil de gênero mostra uma ligeira maioria de clientes do gênero **Feminino (F) com 52,14%**, enquanto o gênero **Masculino (M) representa 47,86%**. A proximidade entre os volumes indica um público comprador bastante equilibrado.
+
+5. **Concentração Familiar na Faixa sem Filhos:**
+   - A análise da variável `CL_FHL` revelou uma **média de 1,15 filhos por cliente**, com **mediana e moda iguais a 0**. Mais de metade da base (**52,49%**) não possui filhos registrados, enquanto 37,83% possuem entre 1 e 3 filhos.
+
+6. **Integridade das Categorias e Registros:**
+   - Os registros sem classificação de categoria (`#N/D`) representam apenas **0,44% da base limpa** (3.228 registros). A opção de imputação por `"Sem Categoria"` preservou o histórico das transações sem inventar atributos.
+
+7. **Consistência Temporal e de Identificadores:**
+   - O período analisado engloba **333 datas distintas entre 04/01/2019 e 08/12/2022**, com **100% de validação em identificadores de compra (`CO_ID`) e datas válidas**.
 
 ---
 
@@ -366,9 +377,7 @@ O projeto também pode ser compreendido como um processo simplificado de **ETL �
 
 ### 🧠 Reflexão sobre o processo ETL
 
-O processo demonstrou que a etapa de transformação é fundamental antes da análise.
-
-Uma base pode possuir grande quantidade de registros e, ainda assim, apresentar problemas que comprometem os resultados, como duplicidades, categorias sem classificação e tipos inadequados.
+O processo demonstrou que a etapa de transformação é fundamental antes da análise. Uma base pode possuir grande quantidade de registros e, ainda assim, apresentar problemas que comprometem os resultados, como duplicidades, categorias sem classificação e tipos inadequados.
 
 Por isso, a limpeza e a padronização foram realizadas antes dos cálculos estatísticos e agrupamentos.
 
@@ -376,54 +385,66 @@ Por isso, a limpeza e a padronização foram realizadas antes dos cálculos esta
 
 # 📁 Estrutura do projeto
 
-A organização sugerida para o repositório é:
+A organização do repositório está estruturada da seguinte forma:
 
 ```text
-Miniprojeto_CarolinaRuas_Analise_de_Dados_T1/
+mini-projeto/
 │
-├── 📄 README.md
-├── 📓 Miniprojeto_Analise_Dados_Varejo.ipynb
-├── 🐍 analise-dados-varejo.py
 ├── 📊 Base Varejo.csv
 ├── 📊 df_limpo.csv
-│
-└── 📁 imagens/
-    └── fluxograma-etl.png
+├── 📓 Miniprojeto_Analise_Dados_Varejo.ipynb
+└── 📄 README.md
 ```
-
-> A estrutura pode ser ajustada conforme os arquivos efetivamente utilizados na versão final do repositório.
-
 ---
 
 # ▶️ Como executar o projeto
 
 ## 1. Clonar o repositório
 
-Após disponibilizar o projeto no GitHub, clone o repositório para sua máquina.
+Faça o clone do repositório do GitHub para a sua máquina local:
 
-## 2. Instalar as bibliotecas
+```bash
+git clone https://github.com/carolinaruas-star/mini-projeto.git
+```
+
+---
+
+## 2. Instalar as bibliotecas necessárias
+
+Certifique-se de ter o Python 3 instalado e execute o comando abaixo no terminal para instalar as dependências utilizadas no projeto:
 
 ```bash
 pip install pandas matplotlib
 ```
 
-## 3. Verificar os arquivos
+---
 
-Certifique-se de que a base de dados esteja disponível no mesmo diretório do código:
+## 3. Verificar os arquivos da pasta
+
+Certifique-se de que a base de dados bruta está salva na mesma pasta do notebook:
 
 ```text
-Base Varejo.csv
+mini-projeto/
+├── 📊 Base Varejo.csv
+└── 📓 Miniprojeto_Analise_Dados_Varejo.ipynb
 ```
 
-## 4. Executar o projeto
+---
 
-No VS Code ou terminal:
+## 4. Executar o Notebook
 
-```bash
-python analise-dados-varejo.py
-```
+Você pode executar o projeto de duas formas:
 
-O projeto também pode ser executado em um ambiente como o **Google Colab**, utilizando o notebook disponibilizado no repositório.
+### 💻 Opção A — Localmente (VS Code / Jupyter Notebook)
+1. Abra a pasta `mini-projeto` no VS Code ou Jupyter Lab.
+2. Abra o arquivo **`Miniprojeto_Analise_Dados_Varejo.ipynb`**.
+3. Selecione o Kernel Python configurado.
+4. Clique no menu superior em **Run All** (ou **Executar tudo**).
+
+### ☁️ Opção B — Google Colab
+1. Acesse o [Google Colab](https://colab.research.google.com/) e faça o upload do arquivo **`Miniprojeto_Analise_Dados_Varejo.ipynb`**.
+2. Faça o upload do arquivo **`Base Varejo.csv`** no painel lateral de arquivos do Colab.
+3. No menu superior, vá em **Ambiente de execução ➔ Executar tudo** (Ctrl + F9).
 
 ---
 
@@ -431,19 +452,15 @@ O projeto também pode ser executado em um ambiente como o **Google Colab**, uti
 
 Após a execução, o projeto disponibiliza:
 
-* DataFrame com os dados tratados;
-* diagnóstico da qualidade da base;
-* informações sobre nulos;
-* quantidade de duplicatas;
-* estatística descritiva;
-* agrupamentos;
-* gráficos exploratórios;
-* principais insights;
-* arquivo final:
-
-```text
-df_limpo.csv
-```
+- DataFrame com os dados tratados;
+- diagnóstico da qualidade da base;
+- informações sobre nulos;
+- quantidade de duplicatas;
+- estatística descritiva;
+- agrupamentos;
+- gráficos exploratórios;
+- principais insights;
+- arquivo final: `df_limpo.csv`
 
 ---
 
@@ -451,16 +468,16 @@ df_limpo.csv
 
 As principais decisões de tratamento foram documentadas para tornar o processo reproduzível.
 
-| Problema                     | Tratamento                           |
-| ---------------------------- | ------------------------------------ |
-| Colunas completamente vazias | Removidas                            |
-| Registros duplicados         | Removidos                            |
-| `#N/D` em `PR_CAT`           | Substituído por `Sem Categoria`      |
-| Datas em formato textual     | Convertidas para `datetime`          |
-| Possíveis datas inválidas    | Validadas durante a conversão        |
-| Identificadores              | Convertidos para tipos numéricos     |
-| Textos                       | Padronizados com remoção de espaços  |
-| Dimensões físicas ausentes   | Não aplicável à estrutura desta base |
+| Problema | Tratamento |
+| :--- | :--- |
+| Colunas completamente vazias | Removidas |
+| Registros duplicados | Removidos |
+| `#N/D` em `PR_CAT` | Substituído por `Sem Categoria` |
+| Datas em formato textual | Convertidas para `datetime` |
+| Possíveis datas inválidas | Validadas durante a conversão |
+| Identificadores | Convertidos para tipos numéricos |
+| Textos | Padronizados com remoção de espaços |
+| Dimensões físicas ausentes | Não aplicável à estrutura desta base |
 
 ### ⚠️ Observação importante
 
@@ -472,14 +489,14 @@ Da mesma forma, a atividade menciona tratamento de dimensões físicas, porém e
 
 # 📚 Relação com as sprints
 
-| Sprint                                  | Aplicação no projeto                                                 |
-| --------------------------------------- | -------------------------------------------------------------------- |
-| **Sprint 1 — Importação**               | Leitura do CSV, `csv.DictReader`, DataFrame e inspeção inicial       |
-| **Sprint 2 — Transformação**            | Strings, tipos numéricos e conversão de datas                        |
-| **Sprint 3 — Nulos e duplicatas**       | Tratamento de categorias sem classificação e remoção de duplicidades |
-| **Sprint 4 — Estatística descritiva**   | Análise da variável de número de filhos                              |
-| **Sprint 5 — Relatório e documentação** | Insights, reflexão sobre ETL e documentação                          |
-| **Sprint 6 — Versionamento**            | Organização do código, README e base tratada para o GitHub           |
+| Sprint | Aplicação no projeto |
+| :--- | :--- |
+| **Sprint 1 — Importação** | Leitura do CSV, `csv.DictReader`, DataFrame e inspeção inicial |
+| **Sprint 2 — Transformação** | Strings, tipos numéricos e conversão de datas |
+| **Sprint 3 — Nulos e duplicatas** | Tratamento de categorias sem classificação e remoção de duplicidades |
+| **Sprint 4 — Estatística descritiva** | Análise da variável de número de filhos |
+| **Sprint 5 — Relatório e documentação** | Insights, reflexão sobre ETL e documentação |
+| **Sprint 6 — Versionamento** | Organização do código, README e base tratada para o GitHub |
 
 ---
 
@@ -499,14 +516,12 @@ Além de produzir estatísticas e agrupamentos, o projeto reforça uma etapa ess
 
 Como continuidade do projeto, algumas análises poderiam ser exploradas futuramente:
 
-* aprofundar a investigação dos identificadores de compra e cliente;
-* analisar possíveis inconsistências cadastrais;
-* explorar a evolução das compras ao longo do tempo;
-* investigar relações entre segmentos, categorias e características dos clientes;
-* criar um dashboard para visualização dos principais indicadores;
-* ampliar as validações de qualidade dos dados.
-
-> Essas possibilidades representam extensões futuras e não fazem parte dos resultados apresentados nesta etapa.
+- aprofundar a investigação dos identificadores de compra e cliente;
+- analisar possíveis inconsistências cadastrais;
+- explorar a evolução das compras ao longo do tempo;
+- investigar relações entre segmentos, categorias e características dos clientes;
+- criar um dashboard para visualização dos principais indicadores;
+- ampliar as validações de qualidade dos dados.
 
 ---
 
@@ -514,18 +529,18 @@ Como continuidade do projeto, algumas análises poderiam ser exploradas futurame
 
 Este mini-projeto permitiu praticar conceitos fundamentais de análise de dados com Python:
 
-* leitura estruturada de arquivos CSV;
-* manipulação de DataFrames;
-* identificação de problemas de qualidade;
-* tratamento de dados duplicados;
-* tratamento de categorias sem informação;
-* conversão de tipos;
-* manipulação de datas;
-* estatística descritiva;
-* agrupamento de dados;
-* geração de insights;
-* organização de projetos para GitHub;
-* documentação de processos de dados.
+- leitura estruturada de arquivos CSV;
+- manipulação de DataFrames;
+- identificação de problemas de qualidade;
+- tratamento de dados duplicados;
+- tratamento de categorias sem informação;
+- conversão de tipos;
+- manipulação de datas;
+- estatística descritiva;
+- agrupamento de dados;
+- geração de insights;
+- organização de projetos para GitHub;
+- documentação de processos de dados.
 
 ---
 
@@ -542,5 +557,3 @@ Projeto desenvolvido como parte dos estudos em **Análise de Dados com Python**.
 🚧 **Projeto em desenvolvimento**
 
 As etapas de análise, tratamento, estatística e documentação foram estruturadas de acordo com os requisitos do Mini-Projeto Avaliativo do Módulo 1.
-
-**Próximas etapas:** revisão final, organização do repositório GitHub, versionamento dos arquivos e preparação da entrega.
