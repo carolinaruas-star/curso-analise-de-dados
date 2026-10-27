@@ -1,9 +1,10 @@
 # 📊 Mini-Projeto Avaliativo — Análise de Dados com Python
 
-**Turma:** `Analise_de_Dados_T1`  
+**Turma:** `Analise_de_Dados_T9`  
 **Módulo:** 1 — Análise de Dados com Python  
 **Projeto:** Análise Exploratória de Dados de Varejo  
-**Status:** 🚧 Em desenvolvimento  
+**Nome Aluna:** Ana Carolina Pereira Ruas  
+**Professor:** Renisson Rodrigues De Souza 
 
 ---
 
@@ -551,9 +552,3 @@ Este mini-projeto permitiu praticar conceitos fundamentais de análise de dados 
 Projeto desenvolvido como parte dos estudos em **Análise de Dados com Python**.
 
 ---
-
-## 📌 Status do projeto
-
-🚧 **Projeto em desenvolvimento**
-
-As etapas de análise, tratamento, estatística e documentação foram estruturadas de acordo com os requisitos do Mini-Projeto Avaliativo do Módulo 1.
